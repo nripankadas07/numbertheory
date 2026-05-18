@@ -1,0 +1,9 @@
+"""Test configuration — add the in-tree ``src`` directory to ``sys.path``.
+
+Lets ``pytest`` import ``numbertheory`` without an editable install.
+"""
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "src"))

@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "numbertheory"
+version = "0.1.0"
+description = "Pure-Python number-theory helpers — gcd, lcm, extended Euclidean, modular inverse, Miller-Rabin primality, integer factorisation, Euler's totient, Mobius, CRT, Jacobi symbol, Sieve of Eratosthenes."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "nripankadas07" }]
+requires-python = ">=3.9"
+keywords = ["number-theory", "primality", "modular-arithmetic", "factorisation", "gcd", "lcm", "euler-phi", "totient", "mobius", "chinese-remainder", "miller-rabin", "sieve"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/nripankadas07/numbertheory"
+Issues = "https://github.com/nripankadas07/numbertheory/issues"
+Source = "https://github.com/nripankadas07/numbertheory"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+numbertheory = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+branch = true
+source = ["numbertheory"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+exclude_lines = ["pragma: no cover", "raise NotImplementedError", "if TYPE_CHECKING:"]
+
+[tool.mypy]
+strict = true
+files = ["src/numbertheory"]

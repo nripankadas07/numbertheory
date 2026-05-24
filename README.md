@@ -15,7 +15,7 @@ symbols, Sieve of Eratosthenes. **Zero runtime dependencies.**
 ## Installation
 
 ```bash
-pip install numbertheory
+python -m pip install -e .
 ```
 
 Or from source:
